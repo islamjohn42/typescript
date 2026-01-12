@@ -79,3 +79,19 @@ function updatePerson(person: Person) {
   // But we can't re-assign it.
   // person.id = 12345;
 }
+
+//==============================================
+//=========OOP=============
+class Person {
+  firstname: string;
+  age: number;
+  constructor(firstname: string, age: number) {
+    this.firstname = firstname;
+    this.age = age;
+  }
+  greet() {
+    return `Hello, ${this.firstname}!`;
+  }
+}
+const person = new Person("Ulugbek", 26);
+console.log(person.greet());
