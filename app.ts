@@ -50,19 +50,32 @@ function sayHello(name: unknown): unknown {
   throw new Error("Something went wrong");
 }
 
-// Interface
-interface Person {
-  name: string;
-  age: number;
-  // Optional property
-  telegramUser?: string;
-}
+// // Interface
+// interface Person {
+//   name: string;
+//   age: number;
+//   // Optional property
+//   telegramUser?: string;
+// }
 
-function greetPeople(person: Person) {
-  return `Hello ${person.name} your age is ${person.age}`;
+// function greetPeople(person: Person) {
+//   return `Hello ${person.name} your age is ${person.age}`;
+// }
+// const person = {
+//   name: "Ali",
+//   age: 25,
+// };
+// console.log(greetPeople(person));
+
+interface Person {
+  firstname: string;
+  age: number;
+  telegramUsername?: string;
+  readonly id: number;
 }
-const person = {
-  name: "Ali",
-  age: 25,
-};
-console.log(greetPeople(person));
+function updatePerson(person: Person) {
+  // We can read from 'obj.id'.
+  console.log(`prop has the value '${person.id}'.`);
+  // But we can't re-assign it.
+  // person.id = 12345;
+}

@@ -41,11 +41,9 @@ function sayHello(name) {
     }
     throw new Error("Something went wrong");
 }
-function greetPeople(person) {
-    return `Hello ${person.name} your age is ${person.age}`;
+function updatePerson(person) {
+    // We can read from 'obj.id'.
+    console.log(`prop has the value '${person.id}'.`);
+    // But we can't re-assign it.
+    // person.id = 12345;
 }
-const person = {
-    name: "Ali",
-    age: 25,
-};
-console.log(greetPeople(person));
