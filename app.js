@@ -41,3 +41,11 @@ function sayHello(name) {
     }
     throw new Error("Something went wrong");
 }
+function greetPeople(person) {
+    return `Hello ${person.name} your age is ${person.age}`;
+}
+const person = {
+    name: "Ali",
+    age: 25,
+};
+console.log(greetPeople(person));

@@ -49,3 +49,20 @@ function sayHello(name: unknown): unknown {
 
   throw new Error("Something went wrong");
 }
+
+// Interface
+interface Person {
+  name: string;
+  age: number;
+  // Optional property
+  telegramUser?: string;
+}
+
+function greetPeople(person: Person) {
+  return `Hello ${person.name} your age is ${person.age}`;
+}
+const person = {
+  name: "Ali",
+  age: 25,
+};
+console.log(greetPeople(person));
