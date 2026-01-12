@@ -69,7 +69,7 @@ function sayHello(name: unknown): unknown {
 
 interface Person {
   firstname: string;
-  age: number;
+  // age: number;
   telegramUsername?: string;
   readonly id: number;
 }
@@ -82,16 +82,45 @@ function updatePerson(person: Person) {
 
 //==============================================
 //=========OOP=============
+// class Person {
+//   firstname: string;
+//   age: number;
+//   constructor(firstname: string, age: number) {
+//     this.firstname = firstname;
+//     this.age = age;
+//   }
+//   greet() {
+//     return `Hello, ${this.firstname}!`;
+//   }
+// }
+// const person = new Person("Ulugbek", 26);
+// console.log(person.greet());
+//=========Encapsulation=============
 class Person {
-  firstname: string;
-  age: number;
-  constructor(firstname: string, age: number) {
+  public firstname: string;
+  protected nationality: string;
+  private age: number;
+
+  constructor(firstname: string, age: number, nationality: string) {
     this.firstname = firstname;
     this.age = age;
+    this.nationality = nationality;
   }
-  greet() {
-    return `Hello, ${this.firstname}!`;
+  public getAge(): number {
+    return this.age;
+  }
+  public setAge(age: number): void {
+    if (age < 0) {
+      this.age = 0;
+    } else {
+      this.age = age;
+    }
   }
 }
-const person = new Person("Ulugbek", 26);
-console.log(person.greet());
+const person = new Person("Ulugbek", 26, "Uzbek");
+console.log(person);
+person.setAge(10);
+// console.log(person.age); // ❌ Runtime error
+console.log(person.getAge());
+// person.setAge(-10);
+console.log(person.getAge());

@@ -49,14 +49,42 @@ function updatePerson(person) {
 }
 //==============================================
 //=========OOP=============
+// class Person {
+//   firstname: string;
+//   age: number;
+//   constructor(firstname: string, age: number) {
+//     this.firstname = firstname;
+//     this.age = age;
+//   }
+//   greet() {
+//     return `Hello, ${this.firstname}!`;
+//   }
+// }
+// const person = new Person("Ulugbek", 26);
+// console.log(person.greet());
+//=========Encapsulation=============
 class Person {
-    constructor(firstname, age) {
+    constructor(firstname, age, nationality) {
         this.firstname = firstname;
         this.age = age;
+        this.nationality = nationality;
     }
-    greet() {
-        return `Hello, ${this.firstname}!`;
+    getAge() {
+        return this.age;
+    }
+    setAge(age) {
+        if (age < 0) {
+            this.age = 0;
+        }
+        else {
+            this.age = age;
+        }
     }
 }
-const person = new Person("Ulugbek", 26);
-console.log(person.greet());
+const person = new Person("Ulugbek", 26, "Uzbek");
+console.log(person);
+person.setAge(10);
+// console.log(person.age); // ❌ Runtime error
+console.log(person.getAge());
+// person.setAge(-10);
+console.log(person.getAge());
