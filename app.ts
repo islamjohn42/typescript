@@ -118,9 +118,21 @@ class Person {
   }
 }
 const person = new Person("Ulugbek", 26, "Uzbek");
-console.log(person);
+// console.log(person);
 person.setAge(10);
 // console.log(person.age); // ❌ Runtime error
-console.log(person.getAge());
+// console.log(person.getAge());
 // person.setAge(-10);
-console.log(person.getAge());
+// console.log(person.getAge());
+
+//=========Inheritance=============
+class Engineer extends Person {
+  public technologies: string[] = [];
+
+  constructor(firstname: string, age: number, nationality: string) {
+    super(firstname, age, nationality);
+  }
+}
+const engineer = new Engineer("Ulugbek", 26, "Uzbek");
+engineer.technologies = ["Javascript", "Typescript"];
+console.log(engineer);
